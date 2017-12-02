@@ -1,0 +1,57 @@
+ext {
+    // debugging settings for Spring boot
+    applicationDefaultJvmArgs = [
+        "-Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n"
+    ]
+
+    // spring profiles
+    spring_profiles = ['dev']
+
+    // Spring Boot version
+    springBootVersion = '1.5.2.RELEASE'
+}
+
+configurations {
+    // when running locally
+    dev
+
+    // spring-boot uses logback by default but we prefer log4j
+    all*.exclude module: 'spring-boot-starter-logging'
+}
+
+test {
+    // uncomment next line to see log4j while running unit tests via Gradle; normally, we prefer the way
+    // that Gradle hides these logs in console
+    // testLogging.showStandardStreams = true
+
+    // set profile
+    setActiveProfiles()
+}
+
+task ngrok {
+	doLast {
+	    // see start-ngrok.sh script for more information
+	    setActiveProfiles( [ 'ngrok' ] )
+	}
+}
+
+def setActiveProfiles(include = []) {
+    // add profiles
+    spring_profiles += include
+
+    if (project.hasProperty('bootRun')) {
+        // set bootRun and test Spring profiles
+        test.systemProperty    'spring.profiles.active', spring_profiles.join(",")
+        bootRun.systemProperty 'spring.profiles.active', spring_profiles.join(",")
+    }
+}
+
+if (project.hasProperty('bootRun')) {
+    bootRun {
+        // Use Spring Boot DevTool only when we run Gradle bootRun task
+        classpath = sourceSets.main.runtimeClasspath + configurations.dev
+
+        // set profile
+        setActiveProfiles()
+    }
+}
