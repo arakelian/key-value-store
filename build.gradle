@@ -34,7 +34,7 @@ apply from: "gradle/core.gradle"
 dependencies {
     processor 'org.immutables:value:2.5.6'
 
-    compile 'com.arakelian:more-commons:1.+'
+    compile 'com.arakelian:more-commons:[1.5,2.0['
 
     // common stuff
     compile 'com.google.guava:guava:23.4-jre'
@@ -53,5 +53,5 @@ dependencies {
 
     // for unit testing
     testCompile 'junit:junit:4.12'
-    testCompile 'com.arakelian:jackson-utils:1.+'
+    testCompile 'com.arakelian:jackson-utils:[1.5,2.0['
 }
