@@ -27,7 +27,7 @@ Add the following to your `pom.xml`:
 <dependency>
     <groupId>com.arakelian</groupId>
     <artifactId>key-value-store</artifactId>
-    <version>1.5.1</version>
+    <version>1.6.6</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -42,7 +42,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.arakelian:key-value-store:1.5.1'
+  compile 'com.arakelian:key-value-store:1.6.6'
 }
 ```
 
