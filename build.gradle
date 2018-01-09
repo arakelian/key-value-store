@@ -29,7 +29,7 @@ plugins {
     id "com.github.johnrengelman.shadow" version "2.0.2"
 
     // useful utilities
-    id "com.arakelian.multitool" version "1.1.6"
+    id "com.arakelian.multitool" version "1.2.0"
 }
 
 group   = 'com.arakelian'
@@ -40,17 +40,17 @@ task wrapper(type: Wrapper) {
 
 multitool {
     relocates += [
-        'org.apache.commons'     : 'repackaged.com.arakelian.dao.org.apache.commons',
-        'com.google.common'      : 'repackaged.com.arakelian.dao.com.google.common',
-        'com.google.thirdparty'  : 'repackaged.com.arakelian.dao.com.google.thirdparty',
-        'javax.annotation'       : 'repackaged.com.arakelian.dao.javax.annotation',
+        'org.apache.commons'     : 'repackaged.com.arakelian.dao.${prefix}org.apache.commons',
+        'com.google.common'      : 'repackaged.com.arakelian.dao.${prefix}com.google.common',
+        'com.google.thirdparty'  : 'repackaged.com.arakelian.dao.${prefix}com.google.thirdparty',
+        'javax.annotation'       : 'repackaged.com.arakelian.dao.${prefix}javax.annotation',
     ]
 }
 
 dependencies {
     processor 'org.immutables:value:2.5.6'
 
-    compile 'com.arakelian:more-commons:1.6.6'
+    compile 'com.arakelian:more-commons:1.7.0'
 
     // we shadow the guava stuff that we use because of downstream compatibily issues 
     shadow  'com.google.guava:guava:23.4-jre'
@@ -74,5 +74,5 @@ dependencies {
 
     // for unit testing
     testCompile 'junit:junit:4.12'
-    testCompile 'com.arakelian:jackson-utils:1.6.6'
+    testCompile 'com.arakelian:jackson-utils:1.7.0'
 }
