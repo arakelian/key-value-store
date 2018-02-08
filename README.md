@@ -4,7 +4,7 @@ A generic key-value store API.
 
 ## Installation
 
-The library is available on Maven Central
+The library is available on [Maven Central](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.arakelian%22%20AND%20a%3A%22key-value-store%22).
 
 ### Maven
 
