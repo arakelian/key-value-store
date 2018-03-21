@@ -40,10 +40,10 @@ task wrapper(type: Wrapper) {
 
 multitool {
     relocates += [
-        'org.apache.commons'     : 'repackaged.com.arakelian.dao.${prefix}org.apache.commons',
-        'com.google.common'      : 'repackaged.com.arakelian.dao.${prefix}com.google.common',
-        'com.google.thirdparty'  : 'repackaged.com.arakelian.dao.${prefix}com.google.thirdparty',
-        'javax.annotation'       : 'repackaged.com.arakelian.dao.${prefix}javax.annotation',
+        'org.apache.commons'     : 'repackaged.com.arakelian.store.${prefix}org.apache.commons',
+        'com.google.common'      : 'repackaged.com.arakelian.store.${prefix}com.google.common',
+        'com.google.thirdparty'  : 'repackaged.com.arakelian.store.${prefix}com.google.thirdparty',
+        'javax.annotation'       : 'repackaged.com.arakelian.store.${prefix}javax.annotation',
     ]
     
     proguardConfiguration {

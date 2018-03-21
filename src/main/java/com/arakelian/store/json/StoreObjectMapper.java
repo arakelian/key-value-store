@@ -5,9 +5,9 @@
  * The ASF licenses this file to You under the Apache License, Version 2.0
  * (the "License"); you may not use this file except in compliance with
  * the License.  You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,18 +15,14 @@
  * limitations under the License.
  */
 
-package com.arakelian.dao;
+package com.arakelian.store.json;
 
-public class DaoException extends RuntimeException {
-	public DaoException(final String message) {
-		super(message);
-	}
+import java.io.IOException;
 
-	public DaoException(final String message, final Throwable cause) {
-		super(message, cause);
-	}
+import com.arakelian.store.feature.HasId;
 
-	public DaoException(final Throwable cause) {
-		super(cause);
-	}
+public interface StoreObjectMapper<T extends HasId> {
+    public T readValue(final String value) throws IOException;
+
+    public String writeValueAsString(final T value) throws IOException;
 }
