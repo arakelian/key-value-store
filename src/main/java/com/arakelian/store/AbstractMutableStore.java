@@ -160,8 +160,7 @@ public abstract class AbstractMutableStore<T extends HasId> extends AbstractStor
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this) //
-                .add("table", config.getTable()) //
-                .add("clazz", config.getClazz()) //
+                .add("config", config) //
                 .toString();
     }
 

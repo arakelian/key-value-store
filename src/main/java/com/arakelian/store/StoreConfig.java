@@ -37,8 +37,6 @@ public interface StoreConfig<T extends HasId> {
         return 10;
     }
 
-    public String getTable();
-
     @Value.Default
     public default boolean isSoftDeletes() {
         return HasSoftDeletes.class.isAssignableFrom(getClazz());

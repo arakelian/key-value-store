@@ -83,8 +83,7 @@ public abstract class AbstractStore<T extends HasId> implements Store<T> {
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this) //
-                .add("table", config.getTable()) //
-                .add("clazz", config.getClazz()) //
+                .add("config", config) //
                 .toString();
     }
 
