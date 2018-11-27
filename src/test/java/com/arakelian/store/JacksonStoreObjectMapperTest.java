@@ -47,7 +47,7 @@ public class JacksonStoreObjectMapperTest {
             if (obj == null) {
                 return false;
             }
-            if (getClass() != obj.getClass()) {
+            if (!(obj instanceof Person)) {
                 return false;
             }
             final Person other = (Person) obj;
