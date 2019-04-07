@@ -29,7 +29,7 @@ plugins {
     id "com.github.johnrengelman.shadow" version "5.0.0"
 
     // useful utilities
-    id "com.arakelian.multitool" version "2.1.0"
+    id "com.arakelian.multitool" version "2.3.0"
 }
 
 group   = 'com.arakelian'
@@ -48,8 +48,6 @@ multitool {
     
     proguardConfiguration {
         keep includedescriptorclasses:true, 'class com.arakelian.** { *; }'
-
-        dontnote '**.org.apache.commons.lang3.ObjectUtils'
     }
 }
 
@@ -63,7 +61,7 @@ dependencies {
     errorprone 'com.google.errorprone:error_prone_core:2.3.3'
 
     // use Java 11 versions
-    compile 'com.arakelian:more-commons:2.0.0'
+    compile 'com.arakelian:more-commons:2.1.0'
 
     // we shadow the guava stuff that we use because of downstream compatibily issues 
     shadow  'com.google.guava:guava:27.1-jre'
@@ -87,5 +85,5 @@ dependencies {
 
     // for unit testing
     testCompile 'junit:junit:4.12'
-    testCompile 'com.arakelian:jackson-utils:2.0.0'
+    testCompile 'com.arakelian:jackson-utils:2.1.0'
 }
