@@ -4,8 +4,7 @@ A generic key-value store API.
 
 ## Requirements
 
-* Version 1.x is compatible with Java 8+
-* Version 2.x is compatible with Java 11+
+* Compatible with Java 8+
 
 ## Installation
 
@@ -32,7 +31,7 @@ Add the following to your `pom.xml`:
 <dependency>
     <groupId>com.arakelian</groupId>
     <artifactId>key-value-store</artifactId>
-    <version>2.1.0</version>
+    <version>2.2.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -47,7 +46,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.arakelian:key-value-store:2.1.0'
+  compile 'com.arakelian:key-value-store:2.2.0'
 }
 ```
 
