@@ -85,5 +85,5 @@ dependencies {
 
     // for unit testing
     testCompile 'junit:junit:4.12'
-    testCompile 'com.arakelian:jackson-utils:2.3.0'
+    testCompile 'com.arakelian:jackson-utils:2.4.0'
 }
