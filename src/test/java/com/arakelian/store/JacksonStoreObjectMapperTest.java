@@ -17,10 +17,11 @@
 
 package com.arakelian.store;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.io.IOException;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.arakelian.core.utils.MoreStringUtils;
 import com.arakelian.jackson.utils.JacksonUtils;
@@ -117,6 +118,6 @@ public class JacksonStoreObjectMapperTest {
         expected.setGender(Gender.MALE);
         final String json = mapper.writeValueAsString(expected);
         final Person actual = mapper.readValue(json);
-        Assert.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 }
